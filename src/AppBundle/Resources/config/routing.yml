@@ -1,0 +1,25 @@
+show:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+search:
+    path:     /search
+    defaults: { _controller: AppBundle:Default:index }
+
+results:
+    path:     /results
+    defaults: { _controller: AppBundle:Default:index}
+
+rent_form:
+    path:     /rent
+    defaults: { _controller: AppBundle:Default:index}
+
+status:
+    path:     /status
+    defaults: { _controller: AppBundle:Default:index}
+
+rent_info:
+    path:     /status/{id}
+    defaults: { _controller: AppBundle:Default:index}
+
+
