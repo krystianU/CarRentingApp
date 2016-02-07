@@ -1,0 +1,53 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+
+                <div class="cover">
+                    <h1 class="cover-heading">SymfonyCar</h1>
+                </div>
+
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+
+                <div class="form-group row">
+                    <label class="col-sm-2 form-control-label text-left">Wynajem</label>
+                    <div class="col-sm-3">
+                        {{ form_widget(form.pickupCity) }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_widget(form.pickupDate) }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form_widget(form.pickupTime) }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 form-control-label text-left">Zwrot</label>
+                    <div class="col-sm-3">
+                        {{ form_widget(form.returnCity) }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_widget(form.returnDate) }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form_widget(form.returnTime) }}
+                    </div>
+                </div>
+
+                <div>
+                    {{ form_widget(form.save) }}
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
