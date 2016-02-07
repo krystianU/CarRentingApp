@@ -27,15 +27,18 @@ class DefaultController extends Controller
         $query->setPickupTime(new \DateTime('10:00:00'));
         $query->setReturnTime(new \DateTime('20:30:00'));
 
-        $form = $this->createForm(SearchQueryType::class, $query);
+        $form = $this->createForm(SearchQueryType::class, $query, array(
+            'action' => $this->generateUrl('results'),
+            'method' => 'GET',
+            ));
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+/*        if ($form->isSubmitted() && $form->isValid()) {
             // ... perform some action, such as saving the task to the database
 
-            return $this->redirectToRoute('home');
-        }
+            return $this->redirectToRoute('results');
+        }*/
 
         return $this->render('AppBundle:default:form.html.twig', array(
             'form' => $form->createView(),
