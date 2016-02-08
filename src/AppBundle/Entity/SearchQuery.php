@@ -1,13 +1,45 @@
 <?php
 namespace AppBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class SearchQuery
 {
+    /**
+     * @Assert\NotBlank()
+     */
     protected $pickupCity;
+
+    /**
+     * @Assert\NotBlank()
+     */
     protected $returnCity;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Date()@Assert\GreaterThanOrEqual("today")
+     */
     protected $pickupDate;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Date()
+     * @Assert\GreaterThanOrEqual("today")
+     */
     protected $returnDate;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Time()
+     * @Assert\GreaterThanOrEqual("+1 hours")
+     */
     protected $pickupTime;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Time()
+     * @Assert\GreaterThanOrEqual("+2 hours")
+     */
     protected $returnTime;
 
     public function getPickupCity()

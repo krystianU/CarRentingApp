@@ -1,0 +1,22 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="cover-container">
+            <div class="cover">
+                <h1 class="normal-heading">SymfonyCar</h1>
+            </div>
+            {{ form_start(form) }}
+            {%  include '@App/form/form.html.twig' %}
+            <div class="text-right">
+                {{ form_widget(form.save) }}
+            </div>
+
+            {{ form_end(form)}}
+            <hr>
+
+        </div>
+    </div>
+{% endblock %}

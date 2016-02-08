@@ -37,6 +37,12 @@ body {
     margin-bottom: 2rem;
 }
 
+.normal-heading{
+    font-size: 3rem;
+    color: #FF792F;
+    margin-bottom: 2rem;
+}
+
 /* Custom default button */
 .btn-secondary{
     color: #fff;
@@ -80,3 +86,18 @@ body {
         font-size: 1.25rem;;
     }
 }
+
+/* Form layout */
+
+.form-control{
+    margin: 0 1px;
+}
+
+@media (min-width: 768px){
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+}
+
