@@ -4,21 +4,17 @@ home:
 
 search:
     path:     /search
-    defaults: { _controller: AppBundle:Default:search }
+    defaults: { _controller: AppBundle:Search:search }
 
-results:
-    path:     /results
-    defaults: { _controller: AppBundle:Result:index}
-
-rent_form:
+rent:
     path:     /rent
     defaults: { _controller: AppBundle:Default:index}
 
-status:
+find_reservation:
     path:     /status
     defaults: { _controller: AppBundle:Default:index}
 
-rent_info:
+show_reservation:
     path:     /status/{id}
     defaults: { _controller: AppBundle:Default:index}
 
