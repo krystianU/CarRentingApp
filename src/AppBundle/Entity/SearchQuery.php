@@ -18,14 +18,14 @@ class SearchQuery
     /**
      * @Assert\NotBlank()
      * @Assert\Date()
-     * @Assert\GreaterThanOrEqual("+2 hours")
+     * @Assert\GreaterThanOrEqual("+2 hours", message="Pick up date should happen later than {{ compared_value }}")
      */
     protected $pickupDateTime;
 
     /**
      * @Assert\NotBlank()
      * @Assert\Date()
-     * @Assert\GreaterThanOrEqual("+3 hours")
+     * @Assert\GreaterThanOrEqual("+3 hours", message="Drop off date should happen later than {{ compared_value }}"))
      */
     protected $returnDateTime;
 
