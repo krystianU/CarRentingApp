@@ -8,16 +8,8 @@
             <div class="cover">
                 <h1 class="normal-heading">SymfonyCar</h1>
             </div>
-            {{ form_start(form) }}
-            {{ form_errors(form) }}
-            {%  include '@App/form/form.html.twig' %}
-            <div class="text-right">
-                {{ form_widget(form.save) }}
-            </div>
-
-            {{ form_end(form)}}
+            {% include '@App/form/search_from.html.twig' %}
             <hr>
-
         </div>
     </div>
 {% endblock %}

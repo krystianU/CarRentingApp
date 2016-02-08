@@ -7,19 +7,10 @@
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-
                 <div class="cover">
                     <h1 class="cover-heading">SymfonyCar</h1>
                 </div>
-                {{ form_start(form) }}
-                {{ form_errors(form) }}
-                {%  include '@App/form/form.html.twig' %}
-                <div>
-                    {{ form_widget(form.save) }}
-                </div>
-
-                {{ form_end(form)}}
-
+                {% include '@App/form/search_from.html.twig' %}
             </div>
         </div>
     </div>

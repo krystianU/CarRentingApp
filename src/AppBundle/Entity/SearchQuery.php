@@ -59,7 +59,6 @@ class SearchQuery
         $this->pickupDateTime = $pickupDateTime;
     }
 
-
     public function getReturnDateTime()
     {
         return $this->returnDateTime;

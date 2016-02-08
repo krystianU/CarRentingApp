@@ -25,7 +25,7 @@ class SearchQueryType extends AbstractType
             ))
 
             ->add('save', SubmitType::class, array(
-                'label' => 'Szukaj',
+                'label' => 'Find Car',
                 'attr' => array(
                     'class' => 'btn-secondary btn-lg'
                 )))
