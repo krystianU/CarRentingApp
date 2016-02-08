@@ -25,7 +25,6 @@ class SearchQuery
     /**
      * @Assert\NotBlank()
      * @Assert\Date()
-     * @Assert\GreaterThanOrEqual("today")
      */
     protected $returnDate;
 
