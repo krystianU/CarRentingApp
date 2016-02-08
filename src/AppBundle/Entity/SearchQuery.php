@@ -17,7 +17,6 @@ class SearchQuery
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Date()@Assert\GreaterThanOrEqual("today")
      */
     protected $pickupDate;
 
@@ -31,14 +30,12 @@ class SearchQuery
     /**
      * @Assert\NotBlank()
      * @Assert\Time()
-     * @Assert\GreaterThanOrEqual("+1 hours")
      */
     protected $pickupTime;
 
     /**
      * @Assert\NotBlank()
      * @Assert\Time()
-     * @Assert\GreaterThanOrEqual("+2 hours")
      */
     protected $returnTime;
 

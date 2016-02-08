@@ -12,6 +12,7 @@
                     <h1 class="cover-heading">SymfonyCar</h1>
                 </div>
                 {{ form_start(form) }}
+                {{ form_errors(form) }}
                 {%  include '@App/form/form.html.twig' %}
                 <div>
                     {{ form_widget(form.save) }}
