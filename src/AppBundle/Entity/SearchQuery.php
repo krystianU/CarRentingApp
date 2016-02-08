@@ -18,26 +18,16 @@ class SearchQuery
     /**
      * @Assert\NotBlank()
      * @Assert\Date()
+     * @Assert\GreaterThanOrEqual("+2 hours")
      */
-    protected $pickupDate;
+    protected $pickupDateTime;
 
     /**
      * @Assert\NotBlank()
      * @Assert\Date()
+     * @Assert\GreaterThanOrEqual("+3 hours")
      */
-    protected $returnDate;
-
-    /**
-     * @Assert\NotBlank()
-     * @Assert\Time()
-     */
-    protected $pickupTime;
-
-    /**
-     * @Assert\NotBlank()
-     * @Assert\Time()
-     */
-    protected $returnTime;
+    protected $returnDateTime;
 
     public function getPickupCity()
     {
@@ -59,47 +49,26 @@ class SearchQuery
         $this->returnCity = $returnCity;
     }
 
-    public function getPickupDate()
+    public function getPickupDateTime()
     {
-        return $this->pickupDate;
+        return $this->pickupDateTime;
+    }
+
+    public function setPickupDateTime(\DateTime $pickupDateTime = null)
+    {
+        $this->pickupDateTime = $pickupDateTime;
     }
 
 
-    public function setPickupDate(\DateTime $pickupDate = null)
+    public function getReturnDateTime()
     {
-        $this->pickupDate = $pickupDate;
+        return $this->returnDateTime;
     }
 
-
-    public function getReturnDate()
+    public function setReturnDateTime(\DateTime $returnDateTime = null)
     {
-        return $this->returnDate;
+        $this->returnDateTime = $returnDateTime;
     }
 
-    public function setReturnDate(\DateTime $returnDate = null)
-    {
-        $this->returnDate = $returnDate;
-    }
-
-    public function getPickupTime()
-    {
-        return $this->pickupTime;
-    }
-
-    public function setPickupTime(\DateTime $pickupTime = null)
-    {
-        $this->pickupTime = $pickupTime;
-    }
-
-
-    public function getReturnTime()
-    {
-        return $this->returnTime;
-    }
-
-    public function setReturnTime(\DateTime $returnTime = null)
-    {
-        $this->returnTime = $returnTime;
-    }
 
 }

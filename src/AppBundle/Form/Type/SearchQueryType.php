@@ -4,8 +4,7 @@ namespace AppBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,10 +15,15 @@ class SearchQueryType extends AbstractType
         $builder
             ->add('pickupCity', TextType::class)
             ->add('returnCity', TextType::class)
-            ->add('pickupDate', DateType::class)
-            ->add('returnDate', DateType::class)
-            ->add('pickupTime', TimeType::class)
-            ->add('returnTime', TimeType::class)
+            ->add('pickupDateTime', DateTimeType::class, array(
+                'years' => range(2016,2017),
+                'error_bubbling' => true,
+            ))
+            ->add('returnDateTime', DateTimeType::class, array(
+                'years' => range(2016,2017),
+                'error_bubbling' => true,
+            ))
+
             ->add('save', SubmitType::class, array(
                 'label' => 'Szukaj',
                 'attr' => array(

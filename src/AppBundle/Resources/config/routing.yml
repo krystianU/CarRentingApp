@@ -18,4 +18,6 @@ show_reservation:
     path:     /status/{id}
     defaults: { _controller: AppBundle:Default:index}
 
-
+test:
+    path:     /test
+    defaults: { _controller: AppBundle:Default:test}

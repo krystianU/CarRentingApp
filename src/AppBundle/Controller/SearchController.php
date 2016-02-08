@@ -14,13 +14,6 @@ class SearchController extends Controller
     {
         $query = new SearchQuery();
 
-        $query->setPickupCity('Kraków');
-        $query->setReturnCity('Warszawa');
-        $query->setPickupDate(new \DateTime('tomorrow'));
-        $query->setReturnDate(new \DateTime('tomorrow'));
-        $query->setPickupTime(new \DateTime('10:00:00'));
-        $query->setReturnTime(new \DateTime('20:30:00'));
-
         $form = $this->createForm(SearchQueryType::class, $query);
 
         $form->handleRequest($request);
