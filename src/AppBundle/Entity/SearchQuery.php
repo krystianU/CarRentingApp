@@ -69,5 +69,12 @@ class SearchQuery
         $this->returnDateTime = $returnDateTime;
     }
 
+    /**
+     * @Assert\IsTrue(message = "Pick up date and time cannot happen after drop off date and time")
+     */
+    public function isPickupBeforeReturn()
+    {
+        return $this->getPickupDateTime() <= $this->getReturnDateTime();
+    }
 
 }
