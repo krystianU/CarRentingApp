@@ -15,6 +15,23 @@ class Client
     protected $surname;
     protected $email;
     protected $telephone;
+    protected $public;
+
+    /**
+     * @return mixed
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * @param mixed $public
+     */
+    public function setPublic($public)
+    {
+        $this->public = $public;
+    }
 
     /**
      * @return mixed

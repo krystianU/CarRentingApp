@@ -1,0 +1,31 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="cover-container">
+            <div class="cover">
+                <h1 class="normal-heading">SymfonyCar</h1>
+            </div>
+            <div>
+                <h1>Summary</h1>
+            </div>
+                <b>Identificator Car:</b> {{ reservation.carId }}
+                <p></p>
+                <b>Take car from:</b> {{ reservation.pickupCity }}
+                <p></p>
+                <b>Return Car in:</b> {{ reservation.returnCity }}
+                <p></p>
+                <b>Reservation date:</b> {{ reservation.pickupDateTime }}
+                <p></p>
+                <b>Date of return:</b> {{ reservation.returnDateTime }}
+                <p></p>
+                <b>Name:</b> {{ reservation.name }}
+                <p></p>
+                <b>Surname:</b> {{ reservation.surname }}
+                <p></p>
+                <b>E-mail address:</b> {{ reservation.email }}
+                <p></p>
+                <b>Telephone number:</b> {{ reservation.telephone }}
+            </div>
+    </div>
+{% endblock %}
