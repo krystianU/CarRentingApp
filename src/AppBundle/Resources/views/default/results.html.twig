@@ -8,7 +8,7 @@
             <div class="cover">
                 <h1 class="normal-heading">SymfonyCar</h1>
             </div>
-            {% include '@App/form/search_from.html.twig' %}
+            {% include '@App/form/search_from_right.html.twig' %}
             <hr>
             <div class="row">
                 <h2 class="text-left">Cars that match your query (1)</h2>
@@ -24,7 +24,7 @@
                     <p>Cena za godzinę: {{ car.pricePerHour }}$</p>
                 </div>
                 <div class="col-sm-3" style="background-color: greenyellow; height: 150px;">
-                    BOOK NOW
+                    <a href=" {{ path('booking') }}" class="btn btn-secondary btn-lg">Book Now</a>
                 </div>
             </div>
         </div>
