@@ -10,6 +10,23 @@
             </div>
             {% include '@App/form/search_from.html.twig' %}
             <hr>
+            <div class="row">
+                <h2 class="text-left">Cars that match your query (1)</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="background-color: tomato; height: 150px;">
+                    IMAGE
+                </div>
+                <div class="col-sm-6 text-left">
+                    <p>{{ car.model }} / {{ car.class }}</p>
+                    <p>Ilośc miejsc: {{ car.numberOfSeats  }}</p>
+                    <p>Szyknia: {{ car.typeOfGearbox  }}</p>
+                    <p>Cena za godzinę: {{ car.pricePerHour }}$</p>
+                </div>
+                <div class="col-sm-3" style="background-color: greenyellow; height: 150px;">
+                    BOOK NOW
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
