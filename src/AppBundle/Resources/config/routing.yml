@@ -21,3 +21,8 @@ show_reservation:
 test:
     path:     /test
     defaults: { _controller: AppBundle:Default:test}
+
+booking:
+    path:     /booking
+    defaults: { _controller: AppBundle:Default:book}
+
