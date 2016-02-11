@@ -6,7 +6,6 @@ use AppBundle\Entity\Car;
 use AppBundle\Entity\SearchQuery;
 use AppBundle\Form\Type\SearchQueryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Symfony\Component\HttpFoundation\Request;
 
 class SearchController extends Controller
@@ -29,9 +28,8 @@ class SearchController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            $data = $form->getData();
             $session = $this->get('session');
+            $data = $form->getData();
 
             $session->set('pickupCity', $data->getPickupCity());
             $session->set('returnCity', $data->getReturnCity());
@@ -43,7 +41,7 @@ class SearchController extends Controller
                 'returnCity' => $data->getReturnCity(),
                 'pickupDate' => $data->getPickupDateTime()->format('d-m-Y-H-i'),
                 'returnDate' => $data->getReturnDateTime()->format('d-m-Y-H-i'),
-             ), 301);
+            ), 301);
         }
 
         return $this->render('AppBundle:default:search.html.twig', array(
@@ -56,17 +54,25 @@ class SearchController extends Controller
         $session = $this->get('session');
         $query = new SearchQuery();
 
+        /*Repopulate form */
         $query->setPickupCity($session->get('pickupCity'));
         $query->setReturnCity($session->get('returnCity'));
         $query->setPickupDateTime($session->get('pickupDateTime'));
         $query->setReturnDateTime($session->get('returnDateTime'));
 
+        /*Trying to access not through search route */
+        if($query->getPickupCity() == null || $query->getReturnCity() == null || $query->getPickupDateTime() == null || $query->getReturnDateTime() == null ){
+            return $this->redirectToRoute('results_error');
+        }
+
         $form = $this->createForm(SearchQueryType::class, $query);
+
+        /*Handle new search query */
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
+            $session = $this->get('session');
             $data = $form->getData();
 
             $session->set('pickupCity', $data->getPickupCity());
@@ -79,14 +85,17 @@ class SearchController extends Controller
                 'returnCity' => $data->getReturnCity(),
                 'pickupDate' => $data->getPickupDateTime()->format('d-m-Y-H-i'),
                 'returnDate' => $data->getReturnDateTime()->format('d-m-Y-H-i'),
-            ), 308);
+            ), 301);
         }
 
-        $car = new Car(1,'fiat-126p', 'Fiat 126p', 'Mini', 4, 2, 'Manual', 30);
+        /*Display resutls logic */
+
+        $car = new Car(1, 'fiat-126p', 'Fiat 126p', 'Mini', 4, 2, 'Manual', 30);
 
         return $this->render('AppBundle:default:results.html.twig', array(
             'form' => $form->createView(),
             'car' => $car,
         ));
     }
+
 }
