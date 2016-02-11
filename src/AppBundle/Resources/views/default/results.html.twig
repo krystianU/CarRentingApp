@@ -13,18 +13,31 @@
             <div class="row">
                 <h2 class="text-left">Cars that match your query (1)</h2>
             </div>
+            <hr>
             <div class="row">
-                <div class="col-sm-3" style="background-color: tomato; height: 150px;">
-                    IMAGE
-                </div>
-                <div class="col-sm-6 text-left">
-                    <p>{{ car.model }} / {{ car.classId }}</p>
+                <div class="col-sm-4 text-left" >
+                    <img src="{{ asset('img/cars/fiat-500.png') }}" class="img-responsive">
+                    <p>Model: {{ car.model }} / {{ car.classId }}</p>
                     <p>Ilośc miejsc: {{ car.numberOfSeats  }}</p>
                     <p>Szyknia: {{ car.transmissionId  }}</p>
                     <p>Cena za godzinę: {{ car.pricePerHour }}$</p>
+                    <a href=" {{ path('booking', {'slug': car.slug}) }}" class="btn btn-secondary">Book Now</a>
                 </div>
-                <div class="col-sm-3" style="background-color: greenyellow; height: 150px;">
-                    <a href=" {{ path('booking', {'slug': car.slug}) }}" class="btn btn-secondary btn-lg">Book Now</a>
+                <div class="col-sm-4 text-left" >
+                    <img src="{{ asset('img/cars/mercedes-benz-class-a.png') }}" class="img-responsive">
+                    <p>Model: {{ car.model }} / {{ car.classId }}</p>
+                    <p>Ilośc miejsc: {{ car.numberOfSeats  }}</p>
+                    <p>Szyknia: {{ car.transmissionId  }}</p>
+                    <p>Cena za godzinę: {{ car.pricePerHour }}$</p>
+                    <a href=" {{ path('booking', {'slug': car.slug}) }}" class="btn btn-secondary">Book Now</a>
+                </div>
+                <div class="col-sm-4 text-left" >
+                    <img src="{{ asset('img/cars/opel-corsa.png') }}" class="img-responsive">
+                    <p>Model: {{ car.model }} / {{ car.classId }}</p>
+                    <p>Ilośc miejsc: {{ car.numberOfSeats  }}</p>
+                    <p>Szyknia: {{ car.transmissionId  }}</p>
+                    <p>Cena za godzinę: {{ car.pricePerHour }}$</p>
+                    <a href=" {{ path('booking', {'slug': car.slug}) }}" class="btn btn-secondary">Book Now</a>
                 </div>
             </div>
         </div>
