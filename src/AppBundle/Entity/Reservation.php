@@ -11,55 +11,87 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Reservation
 {
-    protected $carId;
+
+    protected $id;
+    protected $slug;
     protected $pickupCity;
     protected $returnCity;
     protected $pickupDateTime;
     protected $returnDateTime;
-    protected $name;
-    protected $surname;
-    protected $email;
-    protected $telephone;
+    protected $carId;
+    protected $clientName;
+    protected $clientSurname;
+    protected $clientEmail;
+    protected $clientTelephone;
+    protected $createDate;
+    protected $updateDate;
+    protected $status;  /* pending, confirmed, canceled */
 
     /**
      * Reservation constructor.
-     * @param $carId
+     * @param $id
+     * @param $slug
      * @param $pickupCity
      * @param $returnCity
      * @param $pickupDateTime
      * @param $returnDateTime
-     * @param $name
-     * @param $surname
-     * @param $email
-     * @param $telephone
+     * @param $carId
+     * @param $clientName
+     * @param $clientSurname
+     * @param $clientEmail
+     * @param $clientTelephone
+     * @param $createDate
+     * @param $updateDate
+     * @param $status
      */
-    public function __construct($carId, $pickupCity, $returnCity, $pickupDateTime, $returnDateTime, $name, $surname, $email, $telephone)
+    public function __construct($id, $slug, $pickupCity, $returnCity, $pickupDateTime, $returnDateTime, $carId, $clientName, $clientSurname, $clientEmail, $clientTelephone, $createDate, $updateDate, $status)
     {
-        $this->carId = $carId;
+        $this->id = $id;
+        $this->slug = $slug;
         $this->pickupCity = $pickupCity;
         $this->returnCity = $returnCity;
         $this->pickupDateTime = $pickupDateTime;
         $this->returnDateTime = $returnDateTime;
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->email = $email;
-        $this->telephone = $telephone;
+        $this->carId = $carId;
+        $this->clientName = $clientName;
+        $this->clientSurname = $clientSurname;
+        $this->clientEmail = $clientEmail;
+        $this->clientTelephone = $clientTelephone;
+        $this->createDate = $createDate;
+        $this->updateDate = $updateDate;
+        $this->status = $status;
     }
 
     /**
      * @return mixed
      */
-    public function getCarId()
+    public function getId()
     {
-        return $this->carId;
+        return $this->id;
     }
 
     /**
-     * @param mixed $carId
+     * @param mixed $id
      */
-    public function setCarId($carId)
+    public function setId($id)
     {
-        $this->carId = $carId;
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     /**
@@ -129,64 +161,132 @@ class Reservation
     /**
      * @return mixed
      */
-    public function getName()
+    public function getCarId()
     {
-        return $this->name;
+        return $this->carId;
     }
 
     /**
-     * @param mixed $name
+     * @param mixed $carId
      */
-    public function setName($name)
+    public function setCarId($carId)
     {
-        $this->name = $name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    /**
-     * @param mixed $surname
-     */
-    public function setSurname($surname)
-    {
-        $this->surname = $surname;
+        $this->carId = $carId;
     }
 
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getClientName()
     {
-        return $this->email;
+        return $this->clientName;
     }
 
     /**
-     * @param mixed $email
+     * @param mixed $clientName
      */
-    public function setEmail($email)
+    public function setClientName($clientName)
     {
-        $this->email = $email;
+        $this->clientName = $clientName;
     }
 
     /**
      * @return mixed
      */
-    public function getTelephone()
+    public function getClientSurname()
     {
-        return $this->telephone;
+        return $this->clientSurname;
     }
 
     /**
-     * @param mixed $telephone
+     * @param mixed $clientSurname
      */
-    public function setTelephone($telephone)
+    public function setClientSurname($clientSurname)
     {
-        $this->telephone = $telephone;
+        $this->clientSurname = $clientSurname;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getClientEmail()
+    {
+        return $this->clientEmail;
+    }
+
+    /**
+     * @param mixed $clientEmail
+     */
+    public function setClientEmail($clientEmail)
+    {
+        $this->clientEmail = $clientEmail;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientTelephone()
+    {
+        return $this->clientTelephone;
+    }
+
+    /**
+     * @param mixed $clientTelephone
+     */
+    public function setClientTelephone($clientTelephone)
+    {
+        $this->clientTelephone = $clientTelephone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreateDate()
+    {
+        return $this->createDate;
+    }
+
+    /**
+     * @param mixed $createDate
+     */
+    public function setCreateDate($createDate)
+    {
+        $this->createDate = $createDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdateDate()
+    {
+        return $this->updateDate;
+    }
+
+    /**
+     * @param mixed $updateDate
+     */
+    public function setUpdateDate($updateDate)
+    {
+        $this->updateDate = $updateDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+
+
+
 }

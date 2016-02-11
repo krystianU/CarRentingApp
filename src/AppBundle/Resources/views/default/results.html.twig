@@ -18,13 +18,13 @@
                     IMAGE
                 </div>
                 <div class="col-sm-6 text-left">
-                    <p>{{ car.model }} / {{ car.class }}</p>
+                    <p>{{ car.model }} / {{ car.classId }}</p>
                     <p>Ilośc miejsc: {{ car.numberOfSeats  }}</p>
-                    <p>Szyknia: {{ car.typeOfGearbox  }}</p>
+                    <p>Szyknia: {{ car.transmissionId  }}</p>
                     <p>Cena za godzinę: {{ car.pricePerHour }}$</p>
                 </div>
                 <div class="col-sm-3" style="background-color: greenyellow; height: 150px;">
-                    <a href=" {{ path('booking') }}" class="btn btn-secondary btn-lg">Book Now</a>
+                    <a href=" {{ path('booking', {'slug': car.slug}) }}" class="btn btn-secondary btn-lg">Book Now</a>
                 </div>
             </div>
         </div>

@@ -14,24 +14,19 @@ class Client
     protected $name;
     protected $surname;
     protected $email;
-    protected $telephone;
-    protected $public;
+    protected $phoneNumber;
+    protected $termsCheckbox;
+    protected $marketingCheckbox;
 
     /**
-     * @return mixed
+     * Client constructor.
+     * @param $name
+     * @param $surname
+     * @param $email
+     * @param $phoneNumber
+     * @param $termsCheckbox
+     * @param $marketingCheckbox
      */
-    public function getPublic()
-    {
-        return $this->public;
-    }
-
-    /**
-     * @param mixed $public
-     */
-    public function setPublic($public)
-    {
-        $this->public = $public;
-    }
 
     /**
      * @return mixed
@@ -84,19 +79,49 @@ class Client
     /**
      * @return mixed
      */
-    public function getTelephone()
+    public function getPhoneNumber()
     {
-        return $this->telephone;
+        return $this->phoneNumber;
     }
 
     /**
-     * @param mixed $telephone
+     * @param mixed $phoneNumber
      */
-    public function setTelephone($telephone)
+    public function setPhoneNumber($phoneNumber)
     {
-        $this->telephone = $telephone;
+        $this->phoneNumber = $phoneNumber;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTermsCheckbox()
+    {
+        return $this->termsCheckbox;
+    }
 
+    /**
+     * @param mixed $termsCheckbox
+     */
+    public function setTermsCheckbox($termsCheckbox)
+    {
+        $this->termsCheckbox = $termsCheckbox;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMarketingCheckbox()
+    {
+        return $this->marketingCheckbox;
+    }
+
+    /**
+     * @param mixed $marketingCheckbox
+     */
+    public function setMarketingCheckbox($marketingCheckbox)
+    {
+        $this->marketingCheckbox = $marketingCheckbox;
+    }
 
 }

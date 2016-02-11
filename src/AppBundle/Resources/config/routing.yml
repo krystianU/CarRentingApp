@@ -6,6 +6,30 @@ search:
     path:     /search
     defaults: { _controller: AppBundle:Search:search }
 
+results:
+    path:     /results/{pickupCity}/{returnCity}/{pickupDate}/{returnDate}
+    defaults: { _controller: AppBundle:Search:result}
+
+results_error:
+    path:     /results
+    defaults: { _controller: AppBundle:Search:index}
+
+booking:
+    path:     /booking/{slug}
+    defaults: { _controller: AppBundle:Booking:book}
+
+booking_error:
+    path:     /booking
+    defaults: { _controller: AppBundle:Booking:index}
+
+confirmation:
+    path:     /confirmation/{slug}
+    defaults: { _controller: AppBundle:Booking:confirm}
+
+confirmation_error:
+    path:     /confirmation
+    defaults: { _controller: AppBundle:Booking:index}
+
 find_reservation:
     path:     /status
     defaults: { _controller: AppBundle:Default:index}
@@ -13,15 +37,3 @@ find_reservation:
 show_reservation:
     path:     /status/{id}
     defaults: { _controller: AppBundle:Default:index}
-
-test:
-    path:     /test
-    defaults: { _controller: AppBundle:Default:test}
-
-booking:
-    path:     /booking
-    defaults: { _controller: AppBundle:Default:book}
-
-confirmation:
-    path:     /confirmation
-    defaults: { _controller: AppBundle:Booking:index}

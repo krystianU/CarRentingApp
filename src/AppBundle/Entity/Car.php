@@ -5,30 +5,68 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Car
 {
+    protected $id;
+    protected $slug;
     protected $model;
-    protected $class;
+    protected $classId;
     protected $numberOfSeats;
     protected $numberOfDoors;
-    protected $typeOfGearbox;
+    protected $transmissionId;
     protected $pricePerHour;
 
     /**
      * Car constructor.
+     * @param $id
+     * @param $slug
      * @param $model
-     * @param $class
+     * @param $classId
      * @param $numberOfSeats
      * @param $numberOfDoors
-     * @param $typeOfGearbox
+     * @param $transmissionId
      * @param $pricePerHour
      */
-    public function __construct($model, $class, $numberOfSeats, $numberOfDoors, $typeOfGearbox, $pricePerHour)
+    public function __construct($id, $slug, $model, $classId, $numberOfSeats, $numberOfDoors, $transmissionId, $pricePerHour)
     {
+        $this->id = $id;
+        $this->slug = $slug;
         $this->model = $model;
-        $this->class = $class;
+        $this->classId = $classId;
         $this->numberOfSeats = $numberOfSeats;
         $this->numberOfDoors = $numberOfDoors;
-        $this->typeOfGearbox = $typeOfGearbox;
+        $this->transmissionId = $transmissionId;
         $this->pricePerHour = $pricePerHour;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     /**
@@ -50,17 +88,17 @@ class Car
     /**
      * @return mixed
      */
-    public function getClass()
+    public function getClassId()
     {
-        return $this->class;
+        return $this->classId;
     }
 
     /**
-     * @param mixed $class
+     * @param mixed $classId
      */
-    public function setClass($class)
+    public function setClassId($classId)
     {
-        $this->class = $class;
+        $this->classId = $classId;
     }
 
     /**
@@ -98,17 +136,17 @@ class Car
     /**
      * @return mixed
      */
-    public function getTypeOfGearbox()
+    public function getTransmissionId()
     {
-        return $this->typeOfGearbox;
+        return $this->transmissionId;
     }
 
     /**
-     * @param mixed $typeOfGearbox
+     * @param mixed $transmissionId
      */
-    public function setTypeOfGearbox($typeOfGearbox)
+    public function setTransmissionId($transmissionId)
     {
-        $this->typeOfGearbox = $typeOfGearbox;
+        $this->transmissionId = $transmissionId;
     }
 
     /**
