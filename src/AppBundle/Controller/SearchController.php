@@ -18,7 +18,7 @@ class SearchController extends Controller
     public function searchAction(Request $request)
     {
         $session = $this->get('session');
-        var_dump($session->getMetadataBag()->getLastUsed() - $session->getMetadataBag()->getCreated());
+
         $query = new SearchQuery();
         $query->setPickupCity('Kraków');
         $query->setReturnCity('Warszwa');
@@ -54,9 +54,6 @@ class SearchController extends Controller
     public function resultAction(Request $request, $pickupCity, $returnCity, $pickupDate, $returnDate)
     {
         $session = $this->get('session');
-
-        var_dump($session->getMetadataBag()->getLastUsed() - $session->getMetadataBag()->getCreated());
-
 
         $query = new SearchQuery();
 
