@@ -1,0 +1,18 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% form_theme form with 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="cover">
+                    <h1 class="cover-heading">SymfonyCar</h1>
+                </div>
+                {% include '@App/form/status_form.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
