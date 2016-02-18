@@ -12,6 +12,13 @@ class Client
     protected $surname;
     protected $email;
     protected $phoneNumber;
+
+    /**
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 4,
+     * )
+     */
     protected $pin;
     protected $termsCheckbox;
     protected $marketingCheckbox;

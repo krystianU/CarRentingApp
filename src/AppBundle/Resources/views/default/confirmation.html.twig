@@ -6,7 +6,7 @@
             <div class="cover">
                 <h1 class="normal-heading">SymfonyCar</h1>
             </div>
-                <h1 class="text-left">Summary of Reservation: {{ reservation.slug }}</h1>
+            <h1 class="text-left">Summary of Reservation: {{ reservation.slug }}</h1>
             <hr>
             <h2 class="text-left">Car Information</h2>
             <p class="text-left"><b>Car model:</b> {{ reservation.carId }}</p>
@@ -17,10 +17,7 @@
             <p class="text-left"><b>Name:</b> {{ reservation.clientName }} {{ reservation.clientSurname }}</p>
             <p class="text-left"><b>E-mail address:</b> {{ reservation.clientEmail }}</p>
             <p class="text-left"><b>Phone number:</b> {{ reservation.clientTelephone }}</p>
-           <hr>
-            <div class="text-left" style="margin: 20px 0;">
-                <a href="#" class="btn btn-secondary btn-lg">Cancel Reservation</a>
-            </div>
+            <p class="text-left"><b>Pin: </b>1234</p>
         </div>
     </div>
 {% endblock %}

@@ -16,7 +16,9 @@ class StatusQueryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('slug', TextType::class)
+            ->add('slug', TextType::class, array(
+                'label' => 'Reservation code',
+            ))
             ->add('pin', PasswordType::class)
 
             ->add('find', SubmitType::class, array(

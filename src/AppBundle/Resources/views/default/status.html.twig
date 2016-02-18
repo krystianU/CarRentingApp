@@ -1,1 +1,23 @@
-<p>Status Reservation</p>
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="cover-container">
+            <div class="cover">
+                <h1 class="normal-heading">SymfonyCar</h1>
+            </div>
+            <h1 class="text-left">Summary of Reservation: {{ reservation.slug }}</h1>
+            <hr>
+            <h2 class="text-left">Car Information</h2>
+            <p class="text-left"><b>Car model:</b> {{ reservation.carId }}</p>
+            <p class="text-left"><b>Pick up from:</b> {{ reservation.pickupCity }} at {{ pickupDateTime }}</p>
+            <p class="text-left"><b>Drop off to:</b> {{ reservation.returnCity }} at {{ returnDateTime }}</p>
+            <hr>
+            <h2 class="text-left">Client Information</h2>
+            <p class="text-left"><b>Name:</b> {{ reservation.clientName }} {{ reservation.clientSurname }}</p>
+            <p class="text-left"><b>E-mail address:</b> {{ reservation.clientEmail }}</p>
+            <p class="text-left"><b>Phone number:</b> {{ reservation.clientTelephone }}</p>
+            <p class="text-left"><b>Pin: </b>1234</p>
+        </div>
+    </div>
+{% endblock %}

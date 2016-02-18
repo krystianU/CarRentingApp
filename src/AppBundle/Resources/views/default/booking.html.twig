@@ -3,9 +3,15 @@
 {% form_theme form with 'bootstrap_3_layout.html.twig' %}
 
 {% block body %}
-
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
-    {{ form_end(form) }}
+    <div class="wrapper">
+        <div class="cover-container">
+            <div class="cover">
+                <h1 class="normal-heading">SymfonyCar</h1>
+            </div>
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
 
 {% endblock %}
