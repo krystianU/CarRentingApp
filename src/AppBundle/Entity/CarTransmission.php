@@ -2,22 +2,25 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="transmission")
+ */
 class CarTransmission
 {
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     protected $id;
-    protected $type; /* manual, automatic */
 
     /**
-     * CarTransmission constructor.
-     * @param $id
-     * @param $type
+     * @Assert\Choice(choices = {"MANUAL", "AUTOMATIC"})
+     * @ORM\Column(type="string")
      */
-    public function __construct($id, $type)
-    {
-        $this->id = $id;
-        $this->type = $type;
-    }
+    protected $type;
 
     /**
      * @return mixed
@@ -25,14 +28,6 @@ class CarTransmission
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**

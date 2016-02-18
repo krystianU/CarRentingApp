@@ -2,22 +2,25 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="car_class")
+ */
 class CarClass
 {
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     protected $id;
-    protected $name; /* mini, economy, premium, van */
 
     /**
-     * CarClass constructor.
-     * @param $id
-     * @param $name
+     * @Assert\Choice(choices = {"MINI", "ECONOMY", "PREMIUM", "VAN"})
+     * @ORM\Column(type="string")
      */
-    public function __construct($id, $name)
-    {
-        $this->id = $id;
-        $this->name = $name;
-    }
+    protected $type;
 
     /**
      * @return mixed
@@ -28,26 +31,18 @@ class CarClass
     }
 
     /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return mixed
      */
-    public function getName()
+    public function getType()
     {
-        return $this->name;
+        return $this->type;
     }
 
     /**
      * @param mixed $name
      */
-    public function setName($name)
+    public function setType($type)
     {
-        $this->name = $name;
+        $this->type = $type;
     }
 }

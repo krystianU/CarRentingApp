@@ -8,61 +8,93 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="reservation)
+ */
 class Reservation
 {
-
-    protected $id;
-    protected $slug;
-    protected $pickupCity;
-    protected $returnCity;
-    protected $pickupDateTime;
-    protected $returnDateTime;
-    protected $carId;
-    protected $clientName;
-    protected $clientSurname;
-    protected $clientEmail;
-    protected $clientTelephone;
-    protected $createDate;
-    protected $updateDate;
-    protected $status;  /* pending, confirmed, canceled */
-
     /**
-     * Reservation constructor.
-     * @param $id
-     * @param $slug
-     * @param $pickupCity
-     * @param $returnCity
-     * @param $pickupDateTime
-     * @param $returnDateTime
-     * @param $carId
-     * @param $clientName
-     * @param $clientSurname
-     * @param $clientEmail
-     * @param $clientTelephone
-     * @param $createDate
-     * @param $updateDate
-     * @param $status
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    public function __construct($id, $slug, $pickupCity, $returnCity, $pickupDateTime, $returnDateTime, $carId, $clientName, $clientSurname, $clientEmail, $clientTelephone, $createDate, $updateDate, $status)
-    {
-        $this->id = $id;
-        $this->slug = $slug;
-        $this->pickupCity = $pickupCity;
-        $this->returnCity = $returnCity;
-        $this->pickupDateTime = $pickupDateTime;
-        $this->returnDateTime = $returnDateTime;
-        $this->carId = $carId;
-        $this->clientName = $clientName;
-        $this->clientSurname = $clientSurname;
-        $this->clientEmail = $clientEmail;
-        $this->clientTelephone = $clientTelephone;
-        $this->createDate = $createDate;
-        $this->updateDate = $updateDate;
-        $this->status = $status;
-    }
+    protected $id;
 
     /**
+     * @ORM\Column(type="string", length=100, unique=true)
+     */
+    protected $slug;
+
+    /**
+     * TO DO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+     */
+    protected $pickupCity;
+
+    /**
+     * TO DO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+     */
+    protected $returnCity;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $pickupDateTime;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $returnDateTime;
+
+    /**
+     * TO DO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+     */
+    protected $carId;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $clientName;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $clientSurname;
+
+    /**
+     * @Assert\Email()
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $clientEmail;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $clientTelephone;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $createDate;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $updateDate;
+
+    /**
+     * @Assert\Choice(choices = {"PENDING", "CONFIRMED", "CANCELED"})
+     * @ORM\Column(type="string")
+     */
+    protected $status;
+
+    /**
+     * @ORM\Column(type="string", length=4)
+     */
+    protected $pin;
+
+       /**
      * @return mixed
      */
     public function getId()
@@ -71,11 +103,19 @@ class Reservation
     }
 
     /**
-     * @param mixed $id
+     * @return mixed
      */
-    public function setId($id)
+    public function getPin()
     {
-        $this->id = $id;
+        return $this->pin;
+    }
+
+    /**
+     * @param mixed $pin
+     */
+    public function setPin($pin)
+    {
+        $this->pin = $pin;
     }
 
     /**
