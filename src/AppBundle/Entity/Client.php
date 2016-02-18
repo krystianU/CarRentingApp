@@ -12,6 +12,7 @@ class Client
     protected $surname;
     protected $email;
     protected $phoneNumber;
+    protected $pin;
     protected $termsCheckbox;
     protected $marketingCheckbox;
 
@@ -109,6 +110,22 @@ class Client
     public function setMarketingCheckbox($marketingCheckbox)
     {
         $this->marketingCheckbox = $marketingCheckbox;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPin()
+    {
+        return $this->pin;
+    }
+
+    /**
+     * @param mixed $pin
+     */
+    public function setPin($pin)
+    {
+        $this->pin = $pin;
     }
 
 }

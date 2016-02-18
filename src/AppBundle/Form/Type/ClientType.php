@@ -29,6 +29,9 @@ class ClientType extends AbstractType
             ->add('phone_number', TextType::class, array(
                 'error_bubbling' => true,
             ))
+            ->add('pin', TextType::class, array(
+                'error_bubbling' => true,
+            ))
             ->add('terms_checkbox', CheckboxType::class, array(
                 'label'    => 'Do you agree with our Terms?',
                 'required' => false,
