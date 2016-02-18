@@ -5,7 +5,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
- * @ORM\Table(name="transmission")
+ * @ORM\Table(name="car_transmission")
  */
 class CarTransmission
 {

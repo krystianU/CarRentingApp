@@ -2,6 +2,8 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="car")
@@ -39,7 +41,7 @@ class Car
     protected $numberOfDoors;
 
     /**
-     * TO BE OR NOT TO BE
+     * TO DO
      */
     protected $transmissionId;
 

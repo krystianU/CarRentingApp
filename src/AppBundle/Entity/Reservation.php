@@ -1,17 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Arkadiusz
- * Date: 09.02.2016
- * Time: 23:12
- */
+
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * @ORM\Entity
- * @ORM\Table(name="reservation)
+ * @ORM\Table(name="reservation")
  */
 class Reservation
 {
@@ -23,18 +19,12 @@ class Reservation
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=100, unique=true)
+     * @ORM\Column(type="string", length=100)
      */
     protected $slug;
 
-    /**
-     * TO DO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-     */
     protected $pickupCity;
 
-    /**
-     * TO DO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-     */
     protected $returnCity;
 
     /**
@@ -48,7 +38,7 @@ class Reservation
     protected $returnDateTime;
 
     /**
-     * TO DO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+     * TO DO
      */
     protected $carId;
 
@@ -100,22 +90,6 @@ class Reservation
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPin()
-    {
-        return $this->pin;
-    }
-
-    /**
-     * @param mixed $pin
-     */
-    public function setPin($pin)
-    {
-        $this->pin = $pin;
     }
 
     /**
@@ -326,7 +300,19 @@ class Reservation
         $this->status = $status;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPin()
+    {
+        return $this->pin;
+    }
 
-
-
+    /**
+     * @param mixed $pin
+     */
+    public function setPin($pin)
+    {
+        $this->pin = $pin;
+    }
 }
