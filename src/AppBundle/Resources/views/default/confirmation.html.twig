@@ -10,8 +10,8 @@
             <hr>
             <h2 class="text-left">Car Information</h2>
             <p class="text-left"><b>Car model:</b> {{ reservation.carId }}</p>
-            <p class="text-left"><b>Pick up from:</b> {{ reservation.pickupCity }} at {{ reservation.pickupDateTime }}</p>
-            <p class="text-left"><b>Drop off to:</b> {{ reservation.returnCity }} at {{ reservation.returnDateTime }}</p>
+            <p class="text-left"><b>Pick up from:</b> {{ reservation.pickupCity }} at {{ pickupDateTime }}</p>
+            <p class="text-left"><b>Drop off to:</b> {{ reservation.returnCity }} at {{ returnDateTime }}</p>
             <hr>
             <h2 class="text-left">Client Information</h2>
             <p class="text-left"><b>Name:</b> {{ reservation.clientName }} {{ reservation.clientSurname }}</p>

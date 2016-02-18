@@ -47,19 +47,25 @@ class BookingController extends Controller
     {
         $session = $this->get('session');
 
-       $reservation = new Reservation(1, $slug,
-           $session->get('pickupCity'),
-           $session->get('returnCity'),
-           '20-02-2016',
-           '27-02-2016',
-           1,
-           $session->get('clientName'),
-           $session->get('clientSurname'),
-           $session->get('clientEmail'),
-           $session->get('clientPhoneNumber'), '12-02-2016', '12-02-2016', 'confirmed');
+       $reservation = new Reservation();
+       $reservation->setSlug($slug);
+       $reservation->setPickupCity($session->get('pickupCity'));
+       $reservation->setReturnCity($session->get('returnCity'));
+       $reservation->setPickupDateTime($session->get('pickupDateTime'));
+       $reservation->setReturnDateTime($session->get('returnDateTime'));
+       $reservation->setCarId(1);
+       $reservation->setClientName($session->get('clientName'));
+       $reservation->setClientSurname($session->get('clientSurname'));
+       $reservation->setClientEmail($session->get('clientEmail'));
+       $reservation->setClientTelephone($session->get('clientPhoneNumber'));
+
+        $pickupDateTime = $reservation->getPickupDateTime()->format('d-m-Y H:i');
+        $returnDateTime = $reservation->getReturnDateTime()->format('d-m-Y H:i');
 
         return $this->render('AppBundle:default:confirmation.html.twig', array(
             'reservation'=>$reservation,
+            'pickupDateTime'=>$pickupDateTime,
+            'returnDateTime'=>$returnDateTime,
         ));
     }
 }

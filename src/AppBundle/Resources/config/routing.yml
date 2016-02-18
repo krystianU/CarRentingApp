@@ -35,5 +35,5 @@ find_reservation:
     defaults: { _controller: AppBundle:Status:index}
 
 show_reservation:
-    path:     /status/{id}
+    path:     /status/{slug}
     defaults: { _controller: AppBundle:Status:display}

@@ -151,7 +151,7 @@ class Reservation
     /**
      * @param mixed $pickupDateTime
      */
-    public function setPickupDateTime($pickupDateTime)
+    public function setPickupDateTime(\DateTime $pickupDateTime = null)
     {
         $this->pickupDateTime = $pickupDateTime;
     }
@@ -167,7 +167,7 @@ class Reservation
     /**
      * @param mixed $returnDateTime
      */
-    public function setReturnDateTime($returnDateTime)
+    public function setReturnDateTime(\DateTime $returnDateTime = null)
     {
         $this->returnDateTime = $returnDateTime;
     }
