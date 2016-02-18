@@ -8,25 +8,43 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="client")
+ */
 class Client
 {
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
     protected $name;
-    protected $surname;
-    protected $email;
-    protected $phoneNumber;
-    protected $termsCheckbox;
-    protected $marketingCheckbox;
 
     /**
-     * Client constructor.
-     * @param $name
-     * @param $surname
-     * @param $email
-     * @param $phoneNumber
-     * @param $termsCheckbox
-     * @param $marketingCheckbox
+     * @ORM\Column(type="string", length=100)
      */
+    protected $surname;
+
+    /**
+     * @Assert\Email()
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $email;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $phoneNumber;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $termsCheckbox;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $marketingCheckbox;
 
     /**
      * @return mixed

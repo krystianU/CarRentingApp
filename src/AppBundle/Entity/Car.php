@@ -2,40 +2,51 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
-
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="car")
+ */
 class Car
 {
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     protected $id;
-    protected $slug;
-    protected $model;
-    protected $classId;
-    protected $numberOfSeats;
-    protected $numberOfDoors;
-    protected $transmissionId;
-    protected $pricePerHour;
 
     /**
-     * Car constructor.
-     * @param $id
-     * @param $slug
-     * @param $model
-     * @param $classId
-     * @param $numberOfSeats
-     * @param $numberOfDoors
-     * @param $transmissionId
-     * @param $pricePerHour
+     * @ORM\Column(type="string", length=100, unique=true)
      */
-    public function __construct($id, $slug, $model, $classId, $numberOfSeats, $numberOfDoors, $transmissionId, $pricePerHour)
-    {
-        $this->id = $id;
-        $this->slug = $slug;
-        $this->model = $model;
-        $this->classId = $classId;
-        $this->numberOfSeats = $numberOfSeats;
-        $this->numberOfDoors = $numberOfDoors;
-        $this->transmissionId = $transmissionId;
-        $this->pricePerHour = $pricePerHour;
-    }
+    protected $slug;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    protected $model;
+
+
+    protected $classId;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $numberOfSeats;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $numberOfDoors;
+
+    /**
+     * TO BE OR NOT TO BE
+     */
+    protected $transmissionId;
+
+    /**
+     * @ORM\Column(type="decimal", scale=2)
+     */
+    protected $pricePerHour;
 
     /**
      * @return mixed
@@ -43,14 +54,6 @@ class Car
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**
