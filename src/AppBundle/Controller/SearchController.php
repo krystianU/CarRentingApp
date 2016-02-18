@@ -98,7 +98,15 @@ class SearchController extends Controller
 
         /*Display resutls logic */
 
-        $car = new Car(1, 'fiat-126p', 'Fiat 126p', 'Mini', 4, 2, 'Manual', 30);
+        $car = new Car();
+        $car->setSlug('fiat-126p');
+        $car->setModel('Fiat 126p');
+        $car->setClassId(1);
+        $car->setNumberOfDoors(2);
+        $car->setNumberOfSeats(4);
+        $car->setTransmissionId(1);
+        $car->setPricePerHour(30);
+
 
         return $this->render('AppBundle:default:results.html.twig', array(
             'form' => $form->createView(),
